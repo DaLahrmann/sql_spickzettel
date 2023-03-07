@@ -21,7 +21,7 @@ header {
   position: fixed;
   left: 0;
   top: 0;
-  right:0;
+  right: 0;
 }
 
 header > p,
@@ -40,88 +40,95 @@ h1 {
 }
 
 .icon {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .card_deck {
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 70px;
-    justify-content: space-around;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  justify-content: space-around;
 }
 
 .content_card {
-    width: 30vw;
-    min-height: 80vh;
-    border: 2px solid orange;
-    border-radius: 20px;
-    background: white;
-    color: black;
-    padding: 10px;
-    margin-bottom: 30px;
-    font-size: 15px;
+  width: 30vw;
+  min-height: 80vh;
+  border: 2px solid orange;
+  border-radius: 20px;
+  background: white;
+  color: black;
+  padding: 10px;
+  margin-bottom: 30px;
+  font-size: 15px;
 }
 
 .content_header {
-    font-weight: bold;
-    border-bottom: 2px solid gray;
+  font-weight: bold;
+  border-bottom: 2px solid gray;
 }
 
 .command {
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-     margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin: 20px;
 }
 .sql_command {
-    font-weight: bold;
-    margin: 0;
+  font-weight: bold;
+  margin: 0;
 }
 
 .sql-keywords {
-    color:cornflowerblue;
-    text-transform: uppercase;
+  color: cornflowerblue;
+  text-transform: uppercase;
 }
 
 .sql-keywords2 {
-    color:green;
-    text-transform: uppercase;
+  color: green;
+  text-transform: uppercase;
 }
 
 .attribut {
-    color:blueviolet;
-    text-transform: uppercase;
+  color: blueviolet;
+  text-transform: uppercase;
 }
 
 .explanation {
-    margin: 0;
+  margin: 0;
 }
 
 .einrueck {
-    text-indent: 30px;
+  text-indent: 30px;
 }
 
 .commandword {
-    font-weight: bold;
+  font-weight: bold;
 }
 
-
-.sammelbegriff{
-    color: green;
+.sammelbegriff {
+  color: green;
 }
 
-.keyword_list  {
-    margin: 0;
+.keyword_list {
+  margin: 0 0 0 18px;
+  padding: 0;
 }
 
-li {margin: 0;}
+.list_title {
+  margin-bottom: 0;
+}
+
+li {
+  margin: 0;
+  padding: 0;
+}
 
 footer {
-    background-color: #62929e;
-    border-top: 1px solid orange;
-    display: flex;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-  }
+  background-color: #62929e;
+  border-top: 1px solid orange;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

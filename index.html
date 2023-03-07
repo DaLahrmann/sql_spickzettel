@@ -732,18 +732,50 @@
           <p class="sql_command">
             <span class="sql-keywords">execute</span> stored_procedure;
           </p>
-          <p class="explanation">
-            Erstelle oder modifiziere ein Trigger
-          </p>
+          <p class="explanation">Erstelle oder modifiziere ein Trigger</p>
         </div>
 
         <div class="command">
-            <p><span class="commandword attribut">When</span></p>
-            <ul class="keyword_list">
-                <li><span class="commandword attribut">before</span>- löst aus bevor Event stattfindet</li>
-            </ul>
+          <p class="list_title"><span class="commandword attribut">When</span></p>
+          <ul class="keyword_list">
+            <li>
+              <span class="commandword sql-keywords2">before</span>- löst aus
+              bevor Event stattfindet
+            </li>
+            <li>
+              <span class="commandword sql-keywords2">after</span>- löst aus
+              nachdem Event stattfindet
+            </li>
+          </ul>
         </div>
-        
+
+        <div class="command">
+          <p class="list_title"><span class="commandword attribut">event</span></p>
+          <ul class="keyword_list">
+            <li>
+              <span class="commandword sql-keywords2">insert</span>- löst beim einfügen aus
+            </li>
+            <li>
+              <span class="commandword sql-keywords2">update</span>- löst daten verändern aus
+            </li>
+            <li>
+              <span class="commandword sql-keywords2">delete</span>- löst beim löschen aus
+            </li>
+          </ul>
+        </div>
+
+        <div class="command">
+          <p class="list_title"><span class="commandword attribut">trigger_type</span></p>
+          <ul class="keyword_list">
+            <li>
+              <span class="commandword sql-keywords2">for each row</span>
+            </li>
+            <li>
+              <span class="commandword sql-keywords2">for each statement</span>
+            </li>
+          </ul>
+        </div>
+
         <div class="command">
           <p class="sql_command">
             <span class="sql-keywords">create trigger</span>
