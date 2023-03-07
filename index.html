@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>SQL Spickzettel</title>
+  </head>
+  <body>
+    <!-- <h1>SQL Spickzettel</h1> -->
+    <header>
+      <h1 class="title">SQL Spickzettel</h1>
+      <p class="sql_link">
+        <a href="https://www.sqltutorial.org/">https://www.sqltutorial.org/</a>
+      </p>
+      <p class="icon">
+        <img src="./Images/sql.png" alt="SQL icon" height="30px" />
+      </p>
+    </header>
+
+    <section class="card_deck">
+      <div class="content_card">
+        <h2 class="content_header">Daten ausgeben von einer Tabelle</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t;
+          </p>
+          <p class="explanation">
+            Daten aus Spalte c1, c2 von Tabelle t ausgeben
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> *
+            <span class="sql-keywords">from</span> t;
+          </p>
+          <p class="explanation">
+            Daten aus jeder Spalte von Tabelle t ausgeben
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">Where</span> Bedingung;
+          </p>
+          <p class="explanation">Daten ausgeben und nach Bedingung filtern</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select distinct</span> c1
+            <span class="sql-keywords">from</span> t;
+          </p>
+          <p class="explanation">Daten ausgeben und Duplikate rausfiltern</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">Order by</span> c2
+            <span class="attribut">asc [desc]</span>;
+          </p>
+          <p class="explanation">
+            Daten ausgeben und nach c2 aufsteigend (absteigend) ordnen
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">limit</span> n
+            <span class="sql-keywords">offset</span> Offset;
+          </p>
+          <p class="explanation">
+            Offset überspringen und die ersten n Zeilen ausgeben
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,
+            <span class="sammelbegriff"> Spaltenfunktion</span>(c2)
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t</p>
+          <p class="sql_command">
+            <span class="sql-keywords">group by</span> c1;
+          </p>
+          <p class="explanation">
+            Verwendung von Spaltenfunktionen an Zeilengruppen
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,
+            <span class="sammelbegriff"> Spaltenfunktion</span>(c2)
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t</p>
+          <p class="sql_command">
+            <span class="sql-keywords">group by</span> c1
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">having</span> Bedingung;
+          </p>
+          <p class="explanation">Verwendung von Filter für Spaltenfunktionen</p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Daten ausgeben von mehreren Tabellen</h2>
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> t1.c1,t2.c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t1</p>
+          <p class="sql_command">
+            <span class="sql-keywords">inner join</span> t2
+            <span class="sql-keywords">on</span> Bedingung;
+          </p>
+          <p class="explanation">Inner join t1 und t2</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> t1.c1,t2.c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t1</p>
+          <p class="sql_command">
+            <span class="sql-keywords">left join</span> t2
+            <span class="sql-keywords">on</span> Bedingung;
+          </p>
+          <p class="explanation">Left join t1 und t2</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> t1.c1,t2.c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t1</p>
+          <p class="sql_command">
+            <span class="sql-keywords">Right join</span> t2
+            <span class="sql-keywords">on</span> Bedingung;
+          </p>
+          <p class="explanation">Right join t1 und t2</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> t1.c1,t2.c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t1</p>
+          <p class="sql_command">
+            <span class="sql-keywords">full outer join</span> t2
+            <span class="sql-keywords">on</span> Bedingung;
+          </p>
+          <p class="explanation">Ein full out join ausführen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> t1.c1,t2.c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t1</p>
+          <p class="sql_command">
+            <span class="sql-keywords">cross join</span> t2;
+          </p>
+          <p class="explanation">
+            Erstelle ein Kartesisches Produkt von Zeilen der Tabellen
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> t1.c1,t2.c2
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">from</span> t1,t2
+          </p>
+          <p class="explanation">Ein weiterer Weg ein cross join auszuführen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> A.c1,B.c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t1 A</p>
+          <p class="sql_command">
+            <span class="sql-keywords">inner join</span> t2 B
+            <span class="sql-keywords">on</span> Bedingung;
+          </p>
+          <p class="explanation">
+            Join t1 auf sich selbst unter Verwendung von inner join
+          </p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Verwendung von SQL Operatoren</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,c2
+            <span class="sql-keywords">from</span> t1
+          </p>
+          <p class="sql_command"><span class="attribut">union [all]</span></p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,c2
+            <span class="sql-keywords">from</span> t2;
+          </p>
+          <p class="explanation">
+            Schreibe zwei gleich formatierte Listen in einer
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,c2
+            <span class="sql-keywords">from</span> t1
+          </p>
+          <p class="sql_command"><span class="attribut">intersect</span></p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,c2
+            <span class="sql-keywords">from</span> t2;
+          </p>
+          <p class="explanation">Gib überschneidungen zweier Listen aus</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,c2
+            <span class="sql-keywords">from</span> t1
+          </p>
+          <p class="sql_command"><span class="attribut">minus</span></p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1,c2
+            <span class="sql-keywords">from</span> t2;
+          </p>
+          <p class="explanation">
+            Entferne überschneidungen zweier Listen t1 und t2 aus t1.
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">Where</span> c1
+            <span class="attribut"> [not] like</span> Muster;
+          </p>
+          <p class="explanation">
+            Verwendung von Textsuche mittels Wildcards (%).
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">Where</span> c1
+            <span class="attribut"> [not] in</span> Liste;
+          </p>
+          <p class="explanation">Verwendung von Filter mittels Liste.</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">Where</span> c1
+            <span class="attribut"> between</span> hoch
+            <span class="attribut"> and</span> niedrig;
+          </p>
+          <p class="explanation">Angaben von einem Filterinterval</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+            <span class="sql-keywords">from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">Where</span> c1
+            <span class="attribut"> is [not] null</span>;
+          </p>
+          <p class="explanation">Nach leere Elemente filtern</p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Bedienung von Tabellen</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create table</span> t (
+          </p>
+          <p class="sql_command einrueck">
+            id <span class="sql-keywords">int</span>
+            <span class="sql-keywords2">primary key</span>,
+          </p>
+          <p class="sql_command einrueck">
+            name <span class="sql-keywords">varchar</span>
+            <span class="sql-keywords2">not null</span>,
+          </p>
+          <p class="sql_command einrueck">
+            price <span class="sql-keywords">int</span>
+            <span class="sql-keywords2">default 0</span>
+          </p>
+          <p class="sql_command">);</p>
+          <p class="explanation">Eine neue Tabelle mit 3 Spalten erstellen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">drop table</span> t;
+          </p>
+          <p class="explanation">Lösche Tabelle aus dem Database</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">alter table</span> t
+            <span class="sql-keywords">add</span> c;
+          </p>
+          <p class="explanation">Neue Spalte c in Tabelle einfügen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">alter table</span> t
+            <span class="sql-keywords">drop column</span> c;
+          </p>
+          <p class="explanation">Lösche Spalte c aus Tabelle</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">alter table </span> t
+            <span class="sql-keywords">add</span> Dateneinschränkung;
+          </p>
+          <p class="explanation">Einfügen von Dateneinschränkung</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">alter table</span> t
+            <span class="sql-keywords">drop</span> Dateneinschränkung;
+          </p>
+          <p class="explanation">Lösche Dateneinschränkung aus Tabelle</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">alter table</span> t1
+            <span class="sql-keywords">rename to</span> t2;
+          </p>
+          <p class="explanation">Tabelle umbenennen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">alter table</span> t
+            <span class="sql-keywords">rename</span> c1
+            <span class="sql-keywords">to</span> c2;
+          </p>
+          <p class="explanation">Spalte umbenennen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">truncate table</span> t;
+          </p>
+          <p class="explanation">Kompletter Inhalt aus der Tabelle</p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Verwendung von SQL constraints</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create table</span> t (
+          </p>
+          <p class="sql_command einrueck">
+            c1 <span class="sql-keywords">int</span>, c2
+            <span class="sql-keywords">int</span>, c3
+            <span class="sql-keywords">varchar</span>,
+          </p>
+          <p class="sql_command einrueck">
+            <span class="sql-keywords2">primary key</span> (c1, c2)
+          </p>
+          <p class="sql_command">);</p>
+          <p class="explanation">
+            Datenpaar c1 und c2 als Primary Key verwenden
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create table</span> t1 (
+          </p>
+          <p class="sql_command einrueck">
+            c1 <span class="sql-keywords">int</span>
+            <span class="sql-keywords2">primary key</span>,
+          </p>
+          <p class="sql_command einrueck">
+            c2 <span class="sql-keywords">int</span>
+            ,
+          </p>
+          <p class="sql_command einrueck">
+            price <span class="sql-keywords">int</span>
+            <span class="sql-keywords2">foreign key</span> (c2)
+            <span class="sql-keywords2">references</span> t2(c2)
+          </p>
+          <p class="sql_command">);</p>
+          <p class="explanation">
+            Verwende c2 um Tabelle t1 mit t2 zu Verknüpfen
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create table</span> t (
+          </p>
+          <p class="sql_command einrueck">
+            c1 <span class="sql-keywords">int</span>, c2
+            <span class="sql-keywords">int</span>
+          </p>
+          <p class="sql_command einrueck">
+            <span class="sql-keywords2">unique</span> (c1,c2)
+          </p>
+          <p class="sql_command">);</p>
+          <p class="explanation">Mache c1 und c2 einzigartig</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create table</span> t (
+          </p>
+          <p class="sql_command einrueck">
+            c1 <span class="sql-keywords">int</span>, c2
+            <span class="sql-keywords">int</span>
+            <span class="sql-keywords2">primary key</span>,
+          </p>
+          <p class="sql_command einrueck">
+            <span class="sql-keywords2">check</span> (c1>0
+            <span class="sql-keywords">and</span> c1 >= c2)
+          </p>
+          <p class="sql_command">);</p>
+          <p class="explanation">Stellt sicher, dass c1 > 0 und c1 >= c2 ist</p>
+        </div>
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create table</span> t (
+          </p>
+          <p class="sql_command einrueck">
+            c1 <span class="sql-keywords">int</span>
+            <span class="sql-keywords2">primary key</span>,
+          </p>
+          <p class="sql_command einrueck">
+            c2 <span class="sql-keywords">varchar</span>
+            <span class="sql-keywords2">not null</span>,
+          </p>
+          <p class="sql_command">);</p>
+          <p class="explanation">Stellt sicher, dass c2 nicht leer ist</p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Datenbearbeitung in SQL</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">insert into</span> t(Spaltenliste)
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">values</span> (Werteliste);
+          </p>
+          <p class="explanation">Eine Zeile in die Tabelle einfügen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">insert into</span> t(Spaltenliste)
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">values</span>
+            (Werteliste1),(Werteliste2),...;
+          </p>
+          <p class="explanation">Mehrere Zeilen in die Tabelle einfügen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">insert into </span> t1(Spaltenliste)
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> Spaltenliste
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t2;</p>
+          <p class="explanation">Zeilen aus Tabelle t2 in t1 einfügen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command"><span class="sql-keywords">update</span> t</p>
+          <p class="sql_command">
+            <span class="sql-keywords">set</span> c1= x;
+          </p>
+          <p class="explanation">Setze den Wert von c für jede Zeile = x</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command"><span class="sql-keywords">update</span> t</p>
+          <p class="sql_command">
+            <span class="sql-keywords">set</span> c1 = x1, c2=x2
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">where</span> Bedingung
+          </p>
+
+          <p class="explanation">
+            Ersetze den Wer von c1 und c2 für alle Zeile, bei der die
+            Bedingungerfüllt ist
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">delete from</span> t;
+          </p>
+          <p class="explanation">
+            Daten aus Tabelle löschen, Änderung in Log-Datei gespeichert
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">delete from</span> t
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">where</span> Bedingung;
+          </p>
+          <p class="explanation">
+            Lösche alle Zeilen bei der die Bedingung erfüllt ist
+          </p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Verwendung von Views</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create view</span> v(c1,c2)
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">as</span>
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t;</p>
+          <p class="explanation">
+            Erstelle eine virtuelle Tabelle mit Spalten c1 und c2
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create view</span> v(c1,c2)
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">as</span>
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t</p>
+          <p class="sql_command">
+            <span class="sql-keywords">With</span>
+            <span class="attribut">[cascade|local]</span>
+            <span class="sql-keywords">check option</span>;
+          </p>
+          <p class="explanation">Erstelle ein View mit Check Optionen</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create</span>
+            <span class="attribut">recursive</span>
+            <span class="sql-keywords">view</span> v
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">as</span>
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span>-Beschreibung des
+            Startpunktes
+          </p>
+          <p class="sql_command"><span class="sql-keywords">union all</span></p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span>
+            Rekursieve Part;
+          </p>
+          <p class="explanation">Verwendung von Rekursieve Views</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create</span>
+            <span class="attribut">recursive</span>
+            <span class="sql-keywords">view</span> v
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">as</span>
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">select</span> c1, c2
+          </p>
+          <p class="sql_command"><span class="sql-keywords">from</span> t;</p>
+          <p class="explanation">Erstelle einen temporären View</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">drop view</span> v;
+          </p>
+          <p class="explanation">View löschen</p>
+        </div>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Verwendung von Indizes</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create index</span> idx_name
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">on</span> t(c1,c2);
+          </p>
+          <p class="explanation">Weist c1 und c2 Indizes zu</p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create unique index</span> idx_name
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">on</span> t(c1,c2);
+          </p>
+          <p class="explanation">
+            Weist c1 und c2 nicht duplizierte Indizes zu
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">delete index</span> idx_name;
+          </p>
+          <p class="explanation">Lösche die Indizes</p>
+        </div>
+
+        <h2 class="content_header">SQL Spaltenfunktionen</h2>
+
+        <p>
+          <span class="sql-keywords commandword">avg</span> gibt den Mittelwert
+          einer Liste aus
+        </p>
+
+        <p>
+          <span class="sql-keywords commandword">count</span> gibt die Anzahl
+          der Elemente einer Liste aus
+        </p>
+
+        <p>
+          <span class="sql-keywords commandword">sum</span> gibt die Summe einer
+          Liste aus
+        </p>
+
+        <p>
+          <span class="sql-keywords commandword">max</span> gibt den Maximalwert
+          einer Liste aus
+        </p>
+
+        <p>
+          <span class="sql-keywords commandword">min</span> gibt den Minimalwert
+          einer Liste aus
+        </p>
+      </div>
+
+      <div class="content_card">
+        <h2 class="content_header">Verwendung von Trigger</h2>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create or modify trigger</span>
+            before_insert_person
+          </p>
+          <p class="sql_command"><span class="attribut">when event</span></p>
+          <p class="sql_command">
+            <span class="sql-keywords">on</span> t
+            <span class="attribut">trigger_type</span>
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">execute</span> stored_procedure;
+          </p>
+          <p class="explanation">
+            Erstelle oder modifiziere ein Trigger
+          </p>
+        </div>
+
+        <div class="command">
+            <p><span class="commandword attribut">When</span></p>
+            <ul class="keyword_list">
+                <li><span class="commandword attribut">before</span>- löst aus bevor Event stattfindet</li>
+            </ul>
+        </div>
+        
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">create trigger</span>
+            before_insert_person
+          </p>
+          <p class="sql_command"><span class="attribut">before insert</span></p>
+          <p class="sql_command">
+            <span class="sql-keywords">on</span> person
+            <span class="attribut">before each row</span>
+          </p>
+          <p class="sql_command">
+            <span class="sql-keywords">execute</span> stored_procedure;
+          </p>
+          <p class="explanation">
+            Erstelle ein Trigger, der vor jedem Einfügen einer Zeile in der
+            Tabelle person auslöst
+          </p>
+        </div>
+
+        <div class="command">
+          <p class="sql_command">
+            <span class="sql-keywords">drop trigger</span> trigger_name;
+          </p>
+          <p class="explanation">Trigger löschen</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <a href="https://www.flaticon.com/free-icons/sql" title="sql icons"
+        >Sql icons created by Roman Káčerek - Flaticon</a
+      >
+    </footer>
+  </body>
+</html>
